@@ -1,0 +1,14 @@
+{
+	"name": "adapter-bare",
+	"version": "0.0.1",
+	"type": "module",
+	"exports": {
+		".": "./index.js"
+	},
+	"peerDependencies": {
+		"@sveltejs/kit": "^2.0.0"
+	},
+	"devDependencies": {
+		"esbuild": "^0.28.0"
+	}
+}
