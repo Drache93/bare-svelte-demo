@@ -1,4 +1,4 @@
-import adapter from 'adapter-bare';
+import adapter from 'sveltekit-adapter-bare';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

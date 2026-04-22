@@ -63,6 +63,7 @@
 		"hypercore-crypto": "^3.6.1",
 		"hyperswarm": "^4.17.0",
 		"paparam": "^1.10.1",
-		"ready-resource": "^1.2.0"
+		"ready-resource": "^1.2.0",
+		"sveltekit-adapter-bare": "^0.0.1"
 	}
 }
