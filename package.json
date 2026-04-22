@@ -8,11 +8,18 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"build:bare": "bare-build --out build/darwin-arm64 --host darwin-arm64 --runtime bare-native/runtime build/index.js",
+		"build:android": "bare-build --out build/android-arm64 --host android-arm64 --manifest manifest.xml --identifier io.bare.svelte --name BareSvelte --runtime bare-native/runtime build/index.js",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check .",
 		"format": "prettier --write ."
+	},
+	"imports": {
+		"process": {
+			"bare": "bare-process",
+			"default": "process"
+		}
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
@@ -21,6 +28,7 @@
 		"@tailwindcss/forms": "^0.5.11",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.2.2",
+		"@types/node": "^25.6.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
@@ -51,6 +59,9 @@
 		"corestore": "^7.9.2",
 		"esbuild": "^0.28.0",
 		"graceful-goodbye": "^1.3.3",
+		"holepunch-types": "github:Drache93/holepunch-types",
+		"hypercore-crypto": "^3.6.1",
+		"hyperswarm": "^4.17.0",
 		"paparam": "^1.10.1",
 		"ready-resource": "^1.2.0"
 	}

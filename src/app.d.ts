@@ -4,9 +4,7 @@ declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			data: {
-				core: any;
-			};
+			data: import('./app').AppData;
 		}
 		// interface PageData {}
 		// interface PageState {}
