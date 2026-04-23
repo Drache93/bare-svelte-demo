@@ -13,8 +13,10 @@ if (!building && !appData) {
 	process.on('SIGTERM', teardown);
 }
 
-export const handle: Handle = async ({ event, resolve }) => {
-	if (!appData!.opened) await appData!.ready();
+export const handle: Handle = ({ event, resolve }) => {
+	// Don't await ready() here — it would block every request on Hyperswarm
+	// boot. Consumers (connect/send) call ready() themselves, so the cost is
+	// paid lazily inside streamed promises instead of during navigation.
 	event.locals.data = appData as AppData;
 	return resolve(event);
 };

@@ -4,7 +4,7 @@ import { fail } from '@sveltejs/kit';
 export const load: PageServerLoad = ({ locals, params }) => {
 	// Return an un-awaited promise — SvelteKit streams it to the client so the
 	// page can render a loading state while the swarm is joining.
-	const ready = locals.data.connect(params.topic).then(() => ({
+	const ready = locals.data.connect(params.topic.toLowerCase()).then(() => ({
 		topicHex: locals.data.topicHex,
 		messages: [...locals.data.log]
 	}));

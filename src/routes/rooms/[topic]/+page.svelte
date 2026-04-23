@@ -40,7 +40,7 @@
 </script>
 
 <div class="scanlines flex min-h-screen flex-col bg-black text-pink-200">
-	<div class="container mx-auto flex min-h-screen w-full max-w-2xl flex-col p-4">
+	<div class="container mx-auto flex min-h-screen w-full max-w-2xl flex-col p-4 pb-12 sm:pb-4">
 		<header class="mb-4 flex items-start justify-between gap-4 border-b border-pink-500/40 pb-3">
 			<div class="min-w-0 flex-1">
 				<h1
@@ -51,7 +51,7 @@
 				</h1>
 				<p class="font-mono text-xs break-all text-cyan-400/80">
 					<span class="text-pink-500">topic$</span>
-					{params.topic}: {#await data.ready then r}{r.topicHex}{/await}
+					{params.topic.toLowerCase()}: {#await data.ready then r}{r.topicHex}{/await}
 				</p>
 			</div>
 			<div
@@ -60,7 +60,8 @@
 					: 'border-pink-500/40 bg-pink-500/10 text-pink-300/70'}"
 			>
 				{#if joined}
-					<span class="mr-1 inline-block h-2 w-2 rounded-full bg-cyan-400 align-middle"
+					<span
+						class="mr-1 inline-block h-2 w-2 rounded-full bg-cyan-400 align-middle"
 						style="box-shadow: 0 0 8px #00ffff;"
 					></span>
 					peers: {peers}
